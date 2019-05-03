@@ -33,15 +33,16 @@ class HomeController extends Controller
     {
         //$user = Auth::user();
 
-        $user = User::find(2);
+        //$user = User::find(2);
         //$user->name = 'Steve Joe';
         //$user->save();
         //$user->delete();
-        $users = User::all();
+        //$users = User::all();
+        $user = Auth::user();
+        $posts = $user->posts;
+        //dd($posts);
 
-        dd($users->count());
 
-
-        return view('profile', ['users' => $users]);
+        return view('profile', ['posts' => $posts]);
     }
 }
